@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FashionStore - Tienda online de ropa y moda con las mejores marcas. Compra ropa para hombre y mujer con estilo.">
-    <meta name="keywords" content="tienda online, ropa, moda, fashion, compras, hombre, mujer">
-    <meta name="author" content="FashionStore">
-    <meta property="og:title" content="FashionStore - Tu tienda de moda online">
-    <meta property="og:description" content="Descubre nuestra selección de ropa y accesorios de moda">
-    <meta property="og:type" content="website">
-    <title>FashionStore - Tienda Online de Ropa y Moda</title>
+    <meta name="description" content="Carrito de compras - FashionStore. Revisa tus productos y finaliza tu compra.">
+    <title>Carrito - FashionStore</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,16 +15,16 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container">
-                <a class="navbar-brand" href="#inicio" aria-label="FashionStore - Ir a inicio">FashionStore</a>
+                <a class="navbar-brand" href="index.html" aria-label="FashionStore - Ir a inicio">FashionStore</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                         <li class="nav-item">
-                            <a class="btn btn-cart" href="carrito.html" aria-label="Ver carrito de compras">
+                            <a class="btn btn-cart active" href="carrito.html" aria-label="Ver carrito de compras">
                                 🛒 Carrito <span class="badge bg-danger" id="contadorCarrito">0</span>
                             </a>
                         </li>
@@ -40,30 +35,27 @@
     </header>
 
     <main>
-        <section id="inicio" class="hero-section">
+        <section class="carrito-section">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Bienvenido a FashionStore</h1>
-                    <p>Descubre las últimas tendencias en moda</p>
-                    <a href="#productos" class="btn btn-primary btn-lg">Ver Productos</a>
+                <h1 class="section-title">Mi Carrito de Compras</h1>
+                
+                <div id="carritoVacio" class="carrito-vacio">
+                    <p>Tu carrito está vacío</p>
+                    <a href="index.html" class="btn btn-primary">Ir a Comprar</a>
                 </div>
-            </div>
-        </section>
 
-        <section id="productos" class="productos-section">
-            <div class="container">
-                <h2 class="section-title">Nuestra Colección de Ropa</h2>
-                <div class="loading" id="loading" role="status" aria-live="polite">
-                    <p>Cargando productos...</p>
+                <div id="carritoContenido" class="carrito-contenido">
+                    <div id="carritoItems" class="carrito-items"></div>
+                    
+                    <div class="carrito-resumen">
+                        <h2>Resumen de Compra</h2>
+                        <div id="carritoTotal" class="carrito-total"></div>
+                        <div class="carrito-acciones">
+                            <button type="button" class="btn btn-secondary" id="btnVaciarCarrito">Vaciar Carrito</button>
+                            <button type="button" class="btn btn-primary" id="btnFinalizarCompra">Finalizar Compra</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="productos-grid" id="productosContainer" role="list"></div>
-            </div>
-        </section>
-
-        <section id="resenas" class="resenas-section">
-            <div class="container">
-                <h2 class="section-title">Reseñas de Clientes</h2>
-                <div class="resenas-grid" id="resenasContainer"></div>
             </div>
         </section>
     </main>
@@ -82,7 +74,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/productos.js"></script>
-
+    <script src="js/carrito.js"></script>
 </body>
 </html>

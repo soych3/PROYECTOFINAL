@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "María García",
+        "avatar": "https://i.pravatar.cc/80?img=1",
+        "rating": 5,
+        "comentario": "Excelente servicio y productos de calidad. Muy recomendado."
+    },
+    {
+        "id": 2,
+        "nombre": "Juan Pérez",
+        "avatar": "https://i.pravatar.cc/80?img=12",
+        "rating": 5,
+        "comentario": "Entrega rápida y productos tal como se describe."
+    },
+    {
+        "id": 3,
+        "nombre": "Ana López",
+        "avatar": "https://i.pravatar.cc/80?img=5",
+        "rating": 4,
+        "comentario": "Buena experiencia de compra. Volveré a comprar."
+    },
+    {
+        "id": 4,
+        "nombre": "Carlos Ruiz",
+        "avatar": "https://i.pravatar.cc/80?img=14",
+        "rating": 5,
+        "comentario": "Atención al cliente excepcional. Muy satisfecho."
+    }
+]

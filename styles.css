@@ -1,848 +1,515 @@
-/* Importar fuentes de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;400;600;700&family=Bebas+Neue&family=Rock+Salt&display=swap');
-
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales del body */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.btn-cart {
+    background-color: #fff;
+    color: #667eea;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+.btn-cart:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.btn-cart.active {
+    background-color: #667eea;
+    color: white;
+}
+
+.badge.animate {
+    animation: pulse 0.3s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.hero-section {
+    background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('https://images.unsplash.com/photo-1557821552-17105176677c?w=1200') center/cover;
+    color: white;
+    padding: 120px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 50px;
+    color: #667eea;
+}
+
+.productos-section {
+    padding: 80px 0;
     background-color: #f8f9fa;
 }
 
-/* ESTILOS PARA EL HEADER */
-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+.loading {
     text-align: center;
-    padding: 2rem 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-header p {
     font-size: 1.2rem;
-    font-weight: 300;
-    opacity: 0.9;
+    color: #667eea;
+    padding: 40px 0;
 }
 
-/* ESTILOS PARA LA NAVEGACIÓN */
-nav {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 3px solid #ff6b6b;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    flex-wrap: wrap;
-}
-
-nav li {
-    margin: 0.5rem 1rem;
-    position: relative;
-}
-
-nav li::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background: #ff6b6b;
-    transition: width 0.3s ease;
-}
-
-nav li:hover::after {
-    width: 100%;
-}
-
-nav a {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-family: 'Bebas Neue', cursive;
-    font-weight: 500;
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.1rem;
-    position: relative;
-    overflow: hidden;
-}
-
-nav a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-    transition: left 0.5s;
-}
-
-nav a:hover::before {
-    left: 100%;
-}
-
-nav a:hover {
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255,107,107,0.3);
-}
-
-/* ESTILOS PARA EL CONTENIDO PRINCIPAL */
-main {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-/* ESTILOS PARA LAS SECCIONES */
-section {
-    margin-bottom: 3rem;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-section:hover {
-    transform: translateY(-5px);
-}
-
-section h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #2c3e50;
-    border-bottom: 3px solid #3498db;
-    padding-bottom: 0.5rem;
-}
-
-section p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 1rem;
-}
-
-/* BACKGROUND ESPECIAL PARA LA SECCIÓN DE INICIO */
-#inicio {
-    background: linear-gradient(45deg, #74b9ff, #0984e3);
-    background-image: 
-        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.2) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.15) 0%, transparent 50%);
-    color: white;
-}
-
-#inicio h2 {
-    color: white;
-    border-bottom-color: rgba(255,255,255,0.3);
-}
-
-/* BACKGROUND CON IMAGEN PARA LA SECCIÓN DE SERVICIOS */
-#servicios {
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="%23f1f2f6"><polygon points="1000,100 1000,0 0,100"/></svg>'), 
-                linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
-    background-size: 100% 20px, cover;
-    background-position: bottom, center;
-    background-repeat: no-repeat, no-repeat;
-    color: white;
-    position: relative;
-}
-
-#servicios h2 {
-    color: white;
-    border-bottom-color: rgba(255,255,255,0.3);
-}
-
-/* BACKGROUND CON PATTERN PARA LA SECCIÓN ACERCA DE */
-#acerca {
-    background: 
-        repeating-linear-gradient(
-            45deg,
-            #ddd6fe,
-            #ddd6fe 10px,
-            #e0e7ff 10px,
-            #e0e7ff 20px
-        );
-    background-attachment: fixed;
-}
-
-/* ESTILOS PARA EL FORMULARIO */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    color: #2c3e50;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    max-width: 500px;
-    padding: 12px 15px;
-    border: 2px solid #e1e5e9;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-    outline: none;
-    border-color: #3498db;
-    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
-}
-
-textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-button[type="submit"] {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-button[type="submit"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-}
-
-/* ESTILOS PARA EL FOOTER */
-footer {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: #ecf0f1;
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 3rem;
-    font-family: 'Poppins', sans-serif;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
-
-footer p {
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-    
-    nav li {
-        margin: 0.25rem 0;
-    }
-    
-    section {
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    section h2 {
-        font-size: 1.8rem;
-    }
-}
-
-/* ===============================================
-   ESTILOS MULTIMEDIA
-   =============================================== */
-
-/* VIDEO CONTAINER */
-.video-container {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    margin: 2rem auto;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-}
-
-/* HERO IMAGE */
-.hero-image {
-    position: relative;
-    margin: 2rem 0;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-}
-
-.hero-image img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.hero-image:hover img {
-    transform: scale(1.05);
-}
-
-.image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    color: white;
-    padding: 2rem;
-    text-align: center;
-}
-
-.image-overlay h3 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    margin: 0;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-/* SERVICIOS MULTIMEDIA */
-.servicios-multimedia {
-    display: flex;
-    gap: 2rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.servicio-item {
-    flex: 1;
-    min-width: 250px;
-    max-width: 300px;
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-.servicio-item:hover {
-    transform: translateY(-10px);
-}
-
-.servicio-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.servicio-item:hover img {
-    transform: scale(1.1);
-}
-
-.servicio-item h3 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.3rem;
-    color: #ff6b6b;
-    padding: 1rem 1rem 0.5rem;
-    margin: 0;
-    letter-spacing: 1px;
-}
-
-.servicio-item p {
-    color: #ccc;
-    padding: 0 1rem 1rem;
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* AUDIO SECTION */
-.audio-section {
-    margin: 3rem 0;
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    border-radius: 15px;
-    border: 1px solid #333;
-}
-
-.audio-section h3 {
-    font-family: 'Bebas Neue', cursive;
-    color: #ff6b6b;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.audio-section audio {
-    width: 100%;
-    max-width: 500px;
-    background: #2d2d2d;
-    border-radius: 25px;
-    outline: none;
-}
-
-/* ABOUT CONTENT */
-.about-content {
-    display: flex;
-    gap: 2rem;
-    margin: 2rem 0;
-    align-items: flex-start;
-}
-
-.about-image {
-    flex: 1;
-    max-width: 400px;
-}
-
-.about-image img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
-}
-
-.about-image img:hover {
-    transform: scale(1.02);
-}
-
-.about-text {
-    flex: 1;
-    color: #333;
-}
-
-.about-text h3 {
-    font-family: 'Bebas Neue', cursive;
-    color: #ff6b6b;
-    font-size: 1.4rem;
-    margin: 1rem 0 0.5rem 0;
-    letter-spacing: 1px;
-}
-
-.about-text p {
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-/* MAP CONTAINER */
-.map-container {
-    margin: 3rem 0;
-    text-align: center;
-}
-
-.map-container h3 {
-    font-family: 'Bebas Neue', cursive;
-    color: #ff6b6b;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: 2px;
-}
-
-.map-container iframe {
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    max-width: 100%;
-}
-
-/* ===============================================
-   ESTILOS ROCK AND ROLL - SECCIÓN PRODUCTOS
-   =============================================== */
-
-/* PRODUCTOS - FLEXBOX LAYOUT */
-.productos-container {
+.productos-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.5rem;
+    gap: 30px;
     justify-content: center;
-    margin-top: 2rem;
 }
 
 .producto-card {
-    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
-    border: 2px solid #444;
+    background: white;
     border-radius: 15px;
-    padding: 1.5rem;
-    width: 300px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    color: #fff;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-.producto-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-    transition: left 0.5s;
-}
-
-.producto-card:hover::before {
-    left: 100%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 280px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .producto-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    border-color: #ff6b6b;
-    box-shadow: 0 15px 40px rgba(255,107,107,0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.card-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px #ff6b6b);
+.producto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
 }
 
 .producto-card h3 {
-    font-family: 'Bebas Neue', cursive;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    min-height: 50px;
+}
+
+.producto-precio {
     font-size: 1.5rem;
-    color: #ff6b6b;
-    margin-bottom: 0.5rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 15px;
 }
 
-.producto-card p {
-    font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 1rem;
-    line-height: 1.4;
+.btn-agregar {
+    width: 100%;
+    background-color: #667eea;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.precio {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    color: #fff;
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    display: inline-block;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+.btn-agregar:hover {
+    background-color: #764ba2;
 }
 
-/* ===============================================
-   ESTILOS ROCK AND ROLL - SECCIÓN RESEÑAS
-   =============================================== */
+.btn-agregar:focus {
+    outline: 3px solid #ffd700;
+    outline-offset: 2px;
+}
 
-/* RESEÑAS - GRID LAYOUT */
+.resenas-section {
+    padding: 80px 0;
+    background-color: white;
+}
+
 .resenas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .resena-card {
-    background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-    border: 1px solid #333;
-    border-left: 4px solid #ff6b6b;
-    border-radius: 10px;
-    padding: 1.5rem;
-    color: #fff;
-    transition: all 0.3s ease;
-    position: relative;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
-.resena-card.featured {
-    grid-column: span 2;
-    border-left: 4px solid #ffd700;
-    background: linear-gradient(145deg, #1a1a0f, #2d2d1a);
-}
-
-.resena-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255,107,107,0.2);
-    border-left-width: 6px;
-}
-
-.resena-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
+.resena-avatar {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+    margin-bottom: 15px;
+}
+
+.resena-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.resena-rating {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.contacto-section {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.contacto-content {
+    display: flex;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contacto-info {
+    flex: 1;
+}
+
+.contacto-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.contacto-info p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.video-container {
+    margin-top: 30px;
+}
+
+form {
+    flex: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 5px;
+}
+
+.success-message {
+    color: #28a745;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #667eea;
+}
+
+.carrito-item {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #000;
-    text-shadow: none;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
 }
 
-.info {
-    flex-grow: 1;
+.carrito-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
-.info h4 {
-    font-family: 'Rock Salt', cursive;
+.carrito-item-info {
+    flex: 1;
+}
+
+.carrito-item-info h4 {
     font-size: 1rem;
-    margin: 0 0 0.25rem 0;
-    color: #ff6b6b;
+    margin-bottom: 5px;
 }
 
-.banda {
-    font-size: 0.8rem;
-    color: #999;
-    font-style: italic;
+.carrito-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.rating {
-    font-size: 1.2rem;
-    color: #ffd700;
-}
-
-.resena-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #ddd;
-    font-style: italic;
-    margin: 0;
-}
-
-/* ===============================================
-   MEDIA QUERIES RESPONSIVAS PARA CONTACTO
-   =============================================== */
-
-/* Estilos responsivos mejorados para la sección de contacto */
-#contacto {
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    color: #fff;
-    border: 1px solid #333;
-}
-
-#contacto h2 {
-    color: #ff6b6b;
-    font-family: 'Bebas Neue', cursive;
-    letter-spacing: 3px;
-    border-bottom-color: #ff6b6b;
-}
-
-#contacto label {
-    color: #ff6b6b;
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-}
-
-#contacto input[type="text"],
-#contacto input[type="email"],
-#contacto textarea {
-    background: #2d2d2d;
-    border: 2px solid #444;
-    color: #fff;
+.btn-cantidad {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #667eea;
+    color: white;
     border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
 }
 
-#contacto input[type="text"]:focus,
-#contacto input[type="email"]:focus,
-#contacto textarea:focus {
-    border-color: #ff6b6b;
-    box-shadow: 0 0 0 3px rgba(255,107,107,0.2);
+.btn-cantidad:hover {
+    background-color: #764ba2;
 }
 
-#contacto button[type="submit"] {
-    background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-    font-family: 'Bebas Neue', cursive;
-    font-size: 1.2rem;
-    letter-spacing: 2px;
+.btn-eliminar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* MEDIA QUERIES ESPECÍFICAS PARA CONTACTO */
+.btn-eliminar:hover {
+    background-color: #c82333;
+}
+
+.carrito-total {
+    text-align: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 20px;
+    color: #667eea;
+}
+
 @media (max-width: 768px) {
-    #contacto {
-        padding: 1rem;
+    .hero-content h1 {
+        font-size: 2rem;
     }
-    
-    #contacto .form-group {
-        margin-bottom: 1rem;
-    }
-    
-    #contacto input[type="text"],
-    #contacto input[type="email"],
-    #contacto textarea {
-        max-width: 100%;
-        font-size: 16px; /* Evita zoom en iOS */
-    }
-    
-    #contacto button[type="submit"] {
-        width: 100%;
-        padding: 15px;
-        font-size: 1.1rem;
-    }
-}
 
-@media (max-width: 480px) {
-    /* Productos responsivos */
-    .productos-container {
-        flex-direction: column;
-        align-items: center;
+    .hero-content p {
+        font-size: 1rem;
     }
-    
+
+    .contacto-content {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .productos-grid {
+        gap: 20px;
+    }
+
     .producto-card {
         width: 100%;
         max-width: 350px;
     }
-    
-    /* Reseñas responsivas */
+
     .resenas-grid {
         grid-template-columns: 1fr;
     }
-    
-    .resena-card.featured {
-        grid-column: span 1;
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.8rem;
     }
-    
-    .resena-header {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-    
-    .avatar {
-        width: 40px;
-        height: 40px;
+
+    .navbar-brand {
         font-size: 1.2rem;
-    }
-    
-    /* Contacto en móviles pequeños */
-    #contacto {
-        margin: 1rem 0;
-    }
-    
-    #contacto h2 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-    
-    /* Multimedia responsivo */
-    .hero-image img {
-        height: 250px;
-    }
-    
-    .image-overlay {
-        padding: 1rem;
-    }
-    
-    .image-overlay h3 {
-        font-size: 1.5rem;
-    }
-    
-    .servicios-multimedia {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .servicio-item {
-        max-width: 100%;
-    }
-    
-    .about-content {
-        flex-direction: column;
-    }
-    
-    .about-image {
-        max-width: 100%;
-    }
-    
-    .video-container {
-        margin: 1rem auto;
-    }
-    
-    .map-container iframe {
-        height: 250px;
     }
 }
 
-@media (min-width: 1200px) {
-    /* Mejoras para pantallas grandes */
-    .productos-container {
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
-    
-    .resenas-grid {
-        max-width: 1200px;
-        margin: 2rem auto;
-    }
-    
-    .resena-card.featured {
-        grid-column: span 2;
-    }
+/* Estilos específicos para página de carrito */
+.carrito-section {
+    padding: 80px 0;
+    min-height: 70vh;
+}
+
+.carrito-vacio {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.carrito-vacio p {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.carrito-contenido {
+    display: none;
+}
+
+.carrito-items {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carrito-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.carrito-item:last-child {
+    border-bottom: none;
+}
+
+.carrito-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.carrito-item-info {
+    flex: 1;
+}
+
+.carrito-item-info h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.carrito-item-info .precio {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.carrito-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.carrito-item-controls .cantidad {
+    font-size: 1.2rem;
+    font-weight: 600;
+    min-width: 30px;
+    text-align: center;
+}
+
+.carrito-item-total {
+    text-align: right;
+}
+
+.carrito-item-total p {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.carrito-resumen {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carrito-resumen h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #667eea;
+}
+
+.carrito-total .total-final {
+    font-size: 1.5rem;
+    color: #667eea;
+}
+
+.carrito-acciones {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.carrito-acciones .btn {
+    flex: 1;
+    padding: 12px;
+    font-weight: 600;
 }

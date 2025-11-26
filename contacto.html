@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contacto - FashionStore. Envíanos tu consulta y te responderemos a la brevedad.">
+    <title>Contacto - FashionStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="FashionStore - Ir a inicio">FashionStore</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item">
+                            <a class="btn btn-cart" href="carrito.html" aria-label="Ver carrito de compras">
+                                🛒 Carrito <span class="badge bg-danger" id="contadorCarrito">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto-section">
+            <div class="container">
+                <h1 class="section-title">Contáctanos</h1>
+                <div class="contacto-content">
+                    <div class="contacto-info">
+                        <h2>Información de Contacto</h2>
+                        <p>📧 Email: info@fashionstore.com</p>
+                        <p>📞 Teléfono: +1 234 567 890</p>
+                        <p>📍 Dirección: Av. de la Moda 123, Ciudad</p>
+                        <div class="video-container">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Video sobre nuestra tienda" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen aria-label="Video presentación de FashionStore"></iframe>
+                        </div>
+                    </div>
+                    <form id="formularioContacto" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST" novalidate>
+                        <h2>Envíanos un mensaje</h2>
+                        <div class="form-group">
+                            <label for="nombre">Nombre *</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required aria-required="true">
+                            <span class="error-message" id="errorNombre"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" class="form-control" id="email" name="email" required aria-required="true">
+                            <span class="error-message" id="errorEmail"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje *</label>
+                            <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required aria-required="true"></textarea>
+                            <span class="error-message" id="errorMensaje"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                        <p class="success-message" id="successMessage"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 FashionStore. Todos los derechos reservados.</p>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="carrito.html">Carrito</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
