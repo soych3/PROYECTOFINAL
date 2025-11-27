@@ -1,0 +1,98 @@
+[
+    {
+        "id": 1,
+        "title": "Chaqueta de Algodón para Hombre",
+        "price": 55.99,
+        "description": "Chaqueta casual de algodón premium, ideal para entretiempo. Diseño moderno con cierre y bolsillos laterales.",
+        "category": "hombre",
+        "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Camiseta Premium Slim Fit para Hombre",
+        "price": 22.99,
+        "description": "Camiseta de corte ajustado en algodón de alta calidad. Perfecta para uso diario o casual.",
+        "category": "hombre",
+        "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Camisa Casual Slim Fit para Hombre",
+        "price": 29.95,
+        "description": "Camisa elegante de corte slim fit, perfecta para ocasiones casuales y formales.",
+        "category": "hombre",
+        "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Pantalón Chino Clásico para Hombre",
+        "price": 45.50,
+        "description": "Pantalón chino de algodón con corte clásico. Cómodo y versátil para cualquier ocasión.",
+        "category": "hombre",
+        "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Chaqueta de Invierno 3 en 1 para Mujer",
+        "price": 89.99,
+        "description": "Chaqueta versátil con forro desmontable, impermeable y resistente al viento. Perfecta para el invierno.",
+        "category": "mujer",
+        "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Chaqueta Biker de Cuero Sintético para Mujer",
+        "price": 69.99,
+        "description": "Chaqueta estilo biker en cuero sintético de alta calidad. Look moderno y atrevido.",
+        "category": "mujer",
+        "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Blusa Manga Corta Cuello en V para Mujer",
+        "price": 18.99,
+        "description": "Blusa elegante con cuello en V y manga corta. Tela suave y cómoda para uso diario.",
+        "category": "mujer",
+        "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Camiseta Casual de Algodón para Mujer",
+        "price": 15.99,
+        "description": "Camiseta básica de algodón 100%. Corte holgado y cómodo, perfecta para el día a día.",
+        "category": "mujer",
+        "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Vestido Casual de Verano",
+        "price": 35.50,
+        "description": "Vestido ligero y fresco, ideal para los días de verano. Estampado floral y corte favorecedor.",
+        "category": "mujer",
+        "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg"
+    },
+    {
+        "id": 10,
+        "title": "Sudadera con Capucha Unisex",
+        "price": 42.00,
+        "description": "Sudadera cómoda con capucha y bolsillo canguro. Algodón premium, perfecta para cualquier ocasión.",
+        "category": "unisex",
+        "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg"
+    },
+    {
+        "id": 11,
+        "title": "Jeans Skinny para Mujer",
+        "price": 49.99,
+        "description": "Jeans de corte skinny con elastano para mayor comodidad. Color azul oscuro versátil.",
+        "category": "mujer",
+        "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg"
+    },
+    {
+        "id": 12,
+        "title": "Polo Clásico para Hombre",
+        "price": 28.50,
+        "description": "Polo de algodón piqué con cuello y botones. Estilo clásico atemporal.",
+        "category": "hombre",
+        "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg"
+    }
+]
