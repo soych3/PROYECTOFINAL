@@ -1,42 +1,64 @@
-# FashionStore - E-Commerce de Ropa
+# FashionStore - Proyecto Final
 
-Proyecto de tienda en línea de moda con 3 páginas independientes que consume API REST para productos de ropa y gestiona un carrito de compras persistente mediante localStorage.
+Tienda online de moda con arquitectura modular y buenas prácticas de desarrollo.
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
 ```
 PRE PROYECTO/
-├── index.html              # Página principal con productos de ropa y reseñas
-├── contacto.html           # Página de contacto con formulario
-├── carrito.html            # Página del carrito de compras
-├── styles.css              # Hoja de estilos global
-├── resenas.json            # Base de datos local de reseñas
+├── index.html                    # Página principal (único HTML en raíz)
+├── css/
+│   └── styles.css               # Estilos globales
 ├── js/
-│   ├── productos.js        # Lógica de productos de ropa desde API
-│   ├── contacto.js         # Validación de formulario
-│   └── carrito.js          # Gestión del carrito
-└── README.md               # Documentación
+│   ├── main.js                  # Punto de entrada - Index
+│   ├── carrito.page.js          # Lógica página carrito
+│   ├── contacto.page.js         # Lógica página contacto
+│   └── modules/
+│       ├── carrito.module.js    # Módulo de gestión del carrito
+│       ├── productos.module.js  # Módulo de carga de productos
+│       └── resenas.module.js    # Módulo de carga de reseñas
+├── pages/
+│   ├── carrito.html             # Página del carrito
+│   └── contacto.html            # Página de contacto
+├── data/
+│   ├── productos.json           # Base de datos de productos
+│   └── resenas.json             # Base de datos de reseñas
+├── img/                         # Carpeta de imágenes
+└── README.md                    # Documentación
 ```
 
-## Características
-- **3 páginas independientes**: Index, Contacto y Carrito
-- **Diseño responsivo**: Bootstrap, Flexbox y Grid
-- **API REST**: Consumo de FakeStore API para productos de ropa (men's & women's clothing)
-- **JSON local**: Reseñas cargadas dinámicamente
-- **Carrito persistente**: localStorage mantiene el carrito entre sesiones
-- **Formulario funcional**: Validación completa con Formspree
-- **SEO y Accesibilidad**: Optimizado WCAG 2.2
+## ✅ Características Implementadas
 
-## Tecnologías
+### Arquitectura Modular
+- **Separación de responsabilidades**: Cada módulo tiene una función específica
+- **Import/Export ES6**: Módulos JavaScript con sintaxis moderna
+- **Sin código inline**: Todo el JS está en archivos externos
+
+### Funcionalidades
+- ✅ Consulta de productos via **fetch HTTP** al archivo `productos.json`
+- ✅ Renderizado dinámico de productos en tarjetas (cards)
+- ✅ Carrito de compras con **localStorage**
+- ✅ Contador dinámico actualizado en tiempo real
+- ✅ Edición de cantidades y eliminación de productos
+- ✅ Total dinámico calculado automáticamente
+- ✅ Formulario de contacto con validación
+- ✅ Diseño responsive con Flexbox y Grid
+
+### Tecnologías
 - HTML5 semántico
-- CSS3 con Bootstrap 5
-- JavaScript ES6+ vanilla
-- FakeStore API
-- LocalStorage
+- CSS3 con variables y Flexbox/Grid
+- JavaScript ES6+ con módulos
+- Bootstrap 5
+- localStorage API
+- Fetch API
 
-## Uso
-1. Abrir `index.html` en el navegador
-2. Navegar entre páginas usando el menú
-3. Agregar productos al carrito
-4. Ver y gestionar el carrito en `carrito.html`
-5. Enviar consultas desde `contacto.html`
+## 🚀 Uso
+
+1. Abrir `index.html` en un servidor local (Live Server recomendado)
+2. Los módulos ES6 requieren un servidor HTTP para funcionar
+
+## 📝 Notas
+
+- El proyecto utiliza módulos ES6 (`type="module"`)
+- Es necesario ejecutar desde un servidor HTTP (no file://)
+- Compatible con navegadores modernos

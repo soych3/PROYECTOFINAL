@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "María García",
+        "avatar": "https://i.pravatar.cc/150?img=1",
+        "rating": 5,
+        "comentario": "Excelente calidad en la ropa, muy satisfecha con mi compra. El envío fue rápido y la atención al cliente impecable."
+    },
+    {
+        "id": 2,
+        "nombre": "Juan Pérez",
+        "avatar": "https://i.pravatar.cc/150?img=3",
+        "rating": 5,
+        "comentario": "Las camisetas son de muy buena calidad y el precio es muy accesible. Definitivamente volveré a comprar."
+    },
+    {
+        "id": 3,
+        "nombre": "Ana López",
+        "avatar": "https://i.pravatar.cc/150?img=5",
+        "rating": 4,
+        "comentario": "Me encantó la chaqueta que compré. Los talles son exactos y la tela es muy suave. Recomendado!"
+    },
+    {
+        "id": 4,
+        "nombre": "Carlos Ruiz",
+        "avatar": "https://i.pravatar.cc/150?img=8",
+        "rating": 5,
+        "comentario": "Gran variedad de productos y excelente servicio. La página es muy fácil de usar y el carrito funciona perfecto."
+    }
+]
